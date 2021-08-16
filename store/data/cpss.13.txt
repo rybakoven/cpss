@@ -1,0 +1,1440 @@
+{
+  "loaded": true,
+  "cpssId": "13",
+  "projectName": "cpss13-s7demo-sml",
+  "containers": [
+    {
+      "Id": "0dd5b35927e70af43ea789d7341c3aa96926da2ce4654c1b84bd63910c006576",
+      "Names": [
+        "/cpss13-s7demo-sml_twb_1"
+      ],
+      "Image": "registry.tais.aero/tais/ticketchanger/twb:cpss13",
+      "ImageID": "sha256:dc56eb29401457c9bfbd13a5127f55605c473c9859b364d67fb8b161b05edbd0",
+      "Command": "/docker-entrypoint.sh bash -c ' cp -Rf /srv/config/* /srv/www/ && /etc/nginx/cmd.sh '",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "PrivatePort": 80,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 1312,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "1bfbfef2b7d1fa7515858ac629fcc0ba05921acbfe0e34bf2245f6b9ca84db85",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "twb",
+        "com.docker.compose.version": "1.29.1",
+        "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+        "ors.product.branch": "master",
+        "ors.product.commit": "ad941c42",
+        "ors.product.name": "twb",
+        "ors.product.tag": ""
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "2377cb47ec5e6f616208003f1818c828f471fd04341bc35e1c2316b5386eb719",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.17",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:11",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/twx/twb",
+          "Destination": "/srv/config",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "5b7a4520bfcffdfe1482e9a9f3cc9f5d969877029062110f60d1aafc315ccb15",
+      "Names": [
+        "/cpss13-s7demo-sml_dcssignk_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/signk:cpss13",
+      "ImageID": "sha256:a61fa9a741621ee54eb433d6e6031e05e6a23dced8a669b09a8ec482a2c86ed8",
+      "Command": "/bin/sh -c /entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "fa667bc7b34317af18c9d4d06b22ee0a41a7859ee3cb5026b6cce430f9b1c6e3",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "dcssignk",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "6de9b6c329e025e82c3bb98a83a7d97d537d500cbc7e300993617893d1ab4878",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.16",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:10",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "tmpfs",
+          "Source": "",
+          "Destination": "/local/tmp",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "2eef8fd0910ef22faa27b34bdb0ef0524ffdf911d2254a25be3d8a89a81f111d",
+      "Names": [
+        "/cpss13-s7demo-sml_selenium_1"
+      ],
+      "Image": "selenium/standalone-chrome:4.0.0-beta-3-prerelease-20210402",
+      "ImageID": "sha256:3f3a85a33de068b774e4ae810b3d1e35b67c8ae78d76610c170b80b06768bd8a",
+      "Command": "/opt/bin/entry_point.sh",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 4444,
+          "PublicPort": 1309,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 5900,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 7900,
+          "PublicPort": 1310,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "authors": "SeleniumHQ",
+        "com.docker.compose.config-hash": "203632e703007ccafa9fcdd5b0f6a0532e09dc8c58bd7955d5fe6d3ab8856822",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "selenium",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "781fab307c0ba09fdbfc776a7ff1dbe1db4ef7b6ff4aa3b29643139e271df9de",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.18",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:12",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/dev/shm",
+          "Destination": "/dev/shm",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "e407b1b7bb006e1e9d0b3c071a1209b83c4ce5dc484b453b09ba67b6f63e2a55",
+      "Names": [
+        "/cpss13-s7demo-sml_crssignk_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/signk:cpss13",
+      "ImageID": "sha256:a61fa9a741621ee54eb433d6e6031e05e6a23dced8a669b09a8ec482a2c86ed8",
+      "Command": "/bin/sh -c /entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "53c5bef7facb160c15bd861cb0038822eb4e5d2b58e2f090184242051e6c209f",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "crssignk",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "86aaab2e273b0823ae9b168a3d1e450d1f304563f2de1a1ec25ba7c74d0ceb46",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.15",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:0f",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "tmpfs",
+          "Source": "",
+          "Destination": "/local/tmp",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "1907a58149c34cad754b8dc3109a7d5d3bf4f8440460eec47244ce53a537d175",
+      "Names": [
+        "/cpss13-s7demo-sml_twd_1"
+      ],
+      "Image": "registry.tais.aero/tais/ticketchanger/twd:cpss13",
+      "ImageID": "sha256:c1d92834215385690ecf28466f639ed1ea4447a823d73f68c7d1f41bac97bf12",
+      "Command": "/docker-entrypoint.sh bash -c ' cp -Rf /srv/config/* /srv/www/ && /etc/nginx/cmd.sh '",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 1313,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 80,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "92f82cc081135ba0cc944be83939447a871ab9f6148b5cd081b60120b69279c8",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "twd",
+        "com.docker.compose.version": "1.29.1",
+        "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+        "ors.product.branch": "master",
+        "ors.product.commit": "ad941c42",
+        "ors.product.name": "twd",
+        "ors.product.tag": ""
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "6dde76b4739a7b964f1aab8c2b840bec6a095de6fcbb5dd43d8d3d538740cf3f",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.19",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:13",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/twx/twd",
+          "Destination": "/srv/config",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "c495f228c4dead5ef1fd014011c15bdb3774800472dd3513d3bba6d07798a05c",
+      "Names": [
+        "/cpss13-s7demo-sml_dcs_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/crsdcs:cpss13",
+      "ImageID": "sha256:ce76fb241f3295499d3b4a249db986ac5eced52cc41d53ae00dff29843a6d466",
+      "Command": "/bin/sh -c /entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 9702,
+          "PublicPort": 1317,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 9703,
+          "PublicPort": 1311,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "ede1a4f88bacd0b16fd61471979308f81f8223b202d03f7c94b11a950c7b7130",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "dcs",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "b7104257f3267c043bbdac83c40a011825a43c44e4d4fa70eb42f31e919ee82f",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.11",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:0b",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/f2p/dcs",
+          "Destination": "/f2p",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "9fe0fb104494f0c955dd6669bc6e27cdc5fc40657feef205f708055d4e07a26b",
+      "Names": [
+        "/cpss13-s7demo-sml_redis_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/redis:cpss13",
+      "ImageID": "sha256:e3ab4a5c2293a342e0ac3121ea43d1d0786a343d88daf15abc1eced747e3578f",
+      "Command": "docker-entrypoint.sh redis-server /usr/local/etc/redis/redis.conf",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 6379,
+          "PublicPort": 1320,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "286d1c16203513e83425ed202867d4de97bfac44466b8817c9617801d294ac6e",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "redis",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "3bcdd11833db4850c1aeca1c6c83dcb7fc5f0f6269a7052531f4126379af1932",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.20",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:14",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "tmpfs",
+          "Source": "",
+          "Destination": "/data",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "85716ca3e9258924d13498f15c96628a43d87833159fcdcc6617fcac2db9b0cf",
+      "Names": [
+        "/cpss13-s7demo-sml_np_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/np:cpss13",
+      "ImageID": "sha256:4ffceae74dbe604f554822d9099e100b9e89561268184049eccfb18b4a51b6b2",
+      "Command": "/bin/sh -c /entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "0d7292c7ca029f02c497f7a97924b9f5b65c516aa70abf1e6a876a52ccac8ab8",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "np",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "4552eeacd7266360be25c5cab822721420dd9875112aae49754f27dee8274acc",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.14",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:0e",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "58f9da5f7595a512da187a3949721f8d4c8539417e14de872bb7c8f74c7961cc",
+      "Names": [
+        "/cpss13-s7demo-sml_mkv_1"
+      ],
+      "Image": "registry.tais.aero/tais/node-twt-mkv/node-twt-mkv:cpss13",
+      "ImageID": "sha256:34d63397ae4e9908ac1887295e384ca4d06dc9c1a5cd1657da77b19eda7a0647",
+      "Command": "docker-entrypoint.sh /bin/sh -c 'node --max-old-space-size=$MAXOLDSPACESIZE server.js'",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 4002,
+          "PublicPort": 1305,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "0e9b1039d4e0f4487c565756a259abbbd84246833530aa812d6160e98f53a45e",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "mkv",
+        "com.docker.compose.version": "1.29.1",
+        "ors.product.branch": "master",
+        "ors.product.commit": "664a3a8f",
+        "ors.product.name": "mkv",
+        "ors.product.tag": ""
+      },
+      "State": "running",
+      "Status": "Up 21 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "18b08ad895410282dfe801a23a6a5680497da9161e5a73aaf8e5b2fd3f5c8b6d",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.10",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:0a",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "74e7e4b786e3f2c2b6cf54f0e40682b1c2d5bda2ecc83f05e366aa57753e910b",
+      "Names": [
+        "/cpss13-s7demo-sml_twt_1"
+      ],
+      "Image": "registry.tais.aero/tais/ticketchanger/twt:cpss13",
+      "ImageID": "sha256:c8c1f44ff9123886de53a1084f860228117223ef20c587ce66a5dafa8f383879",
+      "Command": "/docker-entrypoint.sh bash -c ' cp -Rf /srv/config/* /srv/www/ && /etc/nginx/cmd.sh '",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "PrivatePort": 80,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 1307,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "b90324e8c41dfdf181d4d6d664afeb87de236c3c74cc2ae8731ff41a45ef5ea5",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "twt",
+        "com.docker.compose.version": "1.29.1",
+        "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+        "ors.product.branch": "master",
+        "ors.product.commit": "ad941c42",
+        "ors.product.name": "twt",
+        "ors.product.tag": ""
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "b33e7e7f4dcbd765d49a3fd78943008f9de20537565618d0f3ce74eba34808f7",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.12",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:0c",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/twx/twt",
+          "Destination": "/srv/config",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "48e344c85f69eeca024df54d27c4db12201678d646d9b2e25c12eba2704720c9",
+      "Names": [
+        "/cpss13-s7demo-sml_rpccrs_1"
+      ],
+      "Image": "registry.tais.aero/tais/php-rpc/rpc:cpss13",
+      "ImageID": "sha256:573131b305bdfb46a8b1a095cc4dde2a65920bad4021fe817cc87f19dc8c4000",
+      "Command": "bash -c ' cp -Rf /srv/config/* /srv/www/ '",
+      "Created": 1626857220,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "2622c22eaa4da7a1bcff88c3d8aaac47596336b1258c54ae046410bd3b614ec9",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "rpccrs",
+        "com.docker.compose.version": "1.29.1",
+        "ors.product.branch": "master",
+        "ors.product.commit": "31f77795",
+        "ors.product.name": "php-rpc",
+        "ors.product.tag": ""
+      },
+      "State": "restarting",
+      "Status": "Restarting (1) 12 seconds ago",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/rpc/crs/config.php",
+          "Destination": "/app/php-rpc/config.php",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/var/log/twx",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "8521b5149da1c4f5e1bb36d8b99b40b6cfb6994ec10391a40252e02b918b2c38",
+      "Names": [
+        "/cpss13-s7demo-sml_sts_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/sts:cpss13",
+      "ImageID": "sha256:f209603536e06abced08aac24595dba636b8fc237665d3a635d5e8ece144289b",
+      "Command": "/bin/sh -c /entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 16444,
+          "PublicPort": 1319,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "464f5226b5f04b093200ac4858d93b92aecac9c25edbbdc0a85ebc072c39f0a8",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "sts",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "10cf4dea37028c091f767a61f721abce0c171d2e089d404449c6d63a3bd04211",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.9",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:09",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/splunk_logs",
+          "Destination": "/local/splunk_logs",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "2d6eedc438cc7b674e7e59a4cf314bd149574903ab56cd8da75c473000bfa643",
+      "Names": [
+        "/cpss13-s7demo-sml_nginx_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/nginx:cpss13",
+      "ImageID": "sha256:87b37a5e4f7fb4e9a10bd7790b40dc7c0de27b5578e87627ed3e883bffc66382",
+      "Command": "/docker-entrypoint.sh nginx -g 'daemon off;'",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "PrivatePort": 80,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 1303,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8081,
+          "PublicPort": 1315,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8082,
+          "PublicPort": 1318,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "ce4cc1d140711fc8a505e48e1f05b5d82bc1d3111fc4b598f3147d3310bcfc3c",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "nginx",
+        "com.docker.compose.version": "1.29.1",
+        "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "cd8f013d003f2a842e54c7113a4ad3194f5d0909c2747ec8ab1eaa6af9a81cda",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.8",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:08",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "tmpfs",
+          "Source": "",
+          "Destination": "/local/tmp",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "f7db3b799767d8fc4777fe86046e06ccec7c67f8db6a66db4a23e873575e1fd8",
+      "Names": [
+        "/cpss13-s7demo-sml_crs_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/crsdcs:cpss13",
+      "ImageID": "sha256:ce76fb241f3295499d3b4a249db986ac5eced52cc41d53ae00dff29843a6d466",
+      "Command": "/bin/sh -c /entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 9702,
+          "PublicPort": 1316,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 9703,
+          "PublicPort": 1302,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "202c9e8fe5cf8deba3227bcad7adf406b5e8f2263d9d07e7b4389a6a0298fbbb",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "crs",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "383f22dac7e9241188c789040841e4f0d61d944726db8f226fd04bfe733df004",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.6",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:06",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/f2p/crs",
+          "Destination": "/f2p",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "e84a47a69ceab13f68ae91cf53a964d8218a7ad1fa6caafce2dc1f36c41efceb",
+      "Names": [
+        "/cpss13-s7demo-sml_ase_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/ase:cpss13",
+      "ImageID": "sha256:069db843382f996f7807f6ea1a01977e83694ef210f73fcfad202f62a84453af",
+      "Command": "/bin/sh -c /home/sybase/entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 5000,
+          "PublicPort": 1301,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 5001,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "b6963f9b98b11123156e2b6e9707b7b17991f7737660f0c9ef97fda8d577a4d9",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "ase",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "ecf87743f17af29c4dcc8948dabd73e80e20a5d1e69bac23a821c9b9b8a0d2c8",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.7",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:07",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "tmpfs",
+          "Source": "",
+          "Destination": "/local/tmp",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "db1c5396868fa00f71ec7a395a6e2449993459567351f8e33c292d98ad3bde81",
+      "Names": [
+        "/cpss13-s7demo-sml_crssigc_1"
+      ],
+      "Image": "registry.tais.aero/tais/cpss/sigc:cpss13",
+      "ImageID": "sha256:a42d727d9d82cc89e6c5d573cf9bb4c4e929ee355304202bb593eacabe9ba6b2",
+      "Command": "/bin/sh -c /entrypoint0.sh",
+      "Created": 1626857220,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "f0a16539e51f96301fab341e7668f030a66d400bfde81f21b33451ce0bccf6b5",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "crssigc",
+        "com.docker.compose.version": "1.29.1"
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "854b715316168c3b841469fce4cc975c696dd99d5a80edb3df2cd4e549405bc2",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.5",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:05",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "cpss13-s7demo-sml_cpss",
+          "Source": "/data/docker/volumes/cpss13-s7demo-sml_cpss/_data",
+          "Destination": "/cpss",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/f2p/sig",
+          "Destination": "/f2p",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/local/out",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "tmpfs",
+          "Source": "",
+          "Destination": "/local/tmp",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "2b0cf957b1f55794248dc64765a225082f16a22be4b1e944907b933ce3c6ca38",
+      "Names": [
+        "/cpss13-s7demo-sml_twp_1"
+      ],
+      "Image": "registry.tais.aero/tais/ticketchanger/twp:cpss13",
+      "ImageID": "sha256:f16653dd640f975e7d7e73eb2c3198292541fd69945119a734245ca23e0e9c8a",
+      "Command": "/docker-entrypoint.sh bash -c ' cp -Rf /srv/config/* /srv/www/ && /etc/nginx/cmd.sh '",
+      "Created": 1626857219,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 1306,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 80,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "1499dd015b67a1adfbfe2382f6e0b7d74af8f26f970f33a322d65535d5f23f8b",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "twp",
+        "com.docker.compose.version": "1.29.1",
+        "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+        "ors.product.branch": "master",
+        "ors.product.commit": "f3e63d9c",
+        "ors.product.name": "twp",
+        "ors.product.tag": ""
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "55ac4c9d6669f13dd0f50ead9b244f85606a9cd5514b0579065668deb9309aa8",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.4",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:04",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/twx/twp",
+          "Destination": "/srv/config",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "58cf81c26409d513cc0aa6c62beb9302a157520d176a12ef8e84d878795005e9",
+      "Names": [
+        "/cpss13-s7demo-sml_rpcdcs_1"
+      ],
+      "Image": "registry.tais.aero/tais/php-rpc/rpc:cpss13",
+      "ImageID": "sha256:573131b305bdfb46a8b1a095cc4dde2a65920bad4021fe817cc87f19dc8c4000",
+      "Command": "/cmd.sh",
+      "Created": 1626857219,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 80,
+          "PublicPort": 1314,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "1548dffe93c1184f813d379991487480a80ccf30e2cb55136325ed0439c82008",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "rpcdcs",
+        "com.docker.compose.version": "1.29.1",
+        "ors.product.branch": "master",
+        "ors.product.commit": "31f77795",
+        "ors.product.name": "php-rpc",
+        "ors.product.tag": ""
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "4df65fd39148826e39edba993fb189df67d39c5a5828d76f33586adec612aace",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.3",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:03",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/rpc/dcs/config.php",
+          "Destination": "/app/php-rpc/config.php",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/out",
+          "Destination": "/var/log/twx",
+          "Mode": "",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ]
+    },
+    {
+      "Id": "27fb160b8e94ccd24e3e1a75ee4995853016167fd5355ca2187e392b67c0aec7",
+      "Names": [
+        "/cpss13-s7demo-sml_twtt_1"
+      ],
+      "Image": "registry.tais.aero/tais/ticketchanger/twtt:cpss13",
+      "ImageID": "sha256:d784dc548f8f2d9951d140046ba2b161365a5efd0bd0edca10e7674086e4453a",
+      "Command": "/docker-entrypoint.sh bash -c ' cp -Rf /srv/config/* /srv/www/ && /etc/nginx/cmd.sh '",
+      "Created": 1626857219,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 1308,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 80,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "8f99fec2808cedd6016028b38e698f87cd722059f99910d5dda38b242b4f936b",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cpss13-s7demo-sml",
+        "com.docker.compose.project.config_files": ".cpss.stage/cpss.yml",
+        "com.docker.compose.project.environment_file": ".cpss.stage/cpss.env",
+        "com.docker.compose.project.working_dir": "/data/home/sml/cpss13/.cpss.stage",
+        "com.docker.compose.service": "twtt",
+        "com.docker.compose.version": "1.29.1",
+        "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+        "ors.product.branch": "master",
+        "ors.product.commit": "ad941c42",
+        "ors.product.name": "twtt",
+        "ors.product.tag": ""
+      },
+      "State": "running",
+      "Status": "Up 26 hours",
+      "HostConfig": {
+        "NetworkMode": "cpss13-s7demo-sml_cpss"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cpss13-s7demo-sml_cpss": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "95ac74eb9f4734900fd547af432b6c8cb378c0e043c6c3cf42684967ea9eae54",
+            "EndpointID": "734b08a134847d7cf52256020dd66b4eff6587e47efd862c255731fbc58b1251",
+            "Gateway": "192.168.128.1",
+            "IPAddress": "192.168.128.2",
+            "IPPrefixLen": 20,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:c0:a8:80:02",
+            "DriverOpts": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/data/home/sml/cpss13/.cpss.stage/twx/twtt",
+          "Destination": "/srv/config",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ]
+    }
+  ],
+  "knownInfo": {
+    "id": 13,
+    "project": "debug",
+    "conf": "",
+    "descr": "Тестирование cpss admin",
+    "owner": "sml",
+    "sirenaVersion": "12",
+    "db": "?",
+    "temulPan": "CPSS13",
+    "path": "/data/home/sml/cpss13/"
+  }
+}
